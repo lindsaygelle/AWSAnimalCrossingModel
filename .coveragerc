@@ -1,0 +1,10 @@
+[run]
+branch = True
+include =
+    model/*
+
+[report]
+exclude_lines =
+    raise NotImplementedError.*
+omit =
+    tests/*
