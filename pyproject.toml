@@ -1,0 +1,18 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=46.4.0", "wheel"]
+
+[tool.black]
+line-length = 79
+skip_string_normalization = true
+
+[tool.isort]
+honor_noqa = true
+line_length = 79
+profile = "black"
+src_paths = ["model", "tests"]
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: marks tests as slow",
+]
