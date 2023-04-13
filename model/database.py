@@ -1,4 +1,4 @@
-"""database module that defines a Record class
+"""`database` module that defines a `Record` class
 representing a record in a database."""
 from datetime import datetime
 from typing import TypedDict, Union
@@ -10,8 +10,8 @@ Id = Union[int, str]
 
 
 class Record(TypedDict):
-    """Record: This class represents a record in a database. It is a subclass
-    of TypedDict, a built-in Python class for defining dictionaries with
+    """`Record`: This class represents a record in a database. It is a subclass
+    of `TypedDict`, a built-in Python class for defining dictionaries with
     specific keys and value types."""
 
     # id: This attribute is an Id type alias representing the unique

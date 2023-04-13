@@ -1,4 +1,4 @@
-"""villager module defines several classes representing data
+"""`villager` module defines several classes representing data
 structures related to villager characters in Animal Crossing."""
 from typing import Literal, Optional
 
@@ -30,9 +30,10 @@ class Basic(Record):
 
 
 class Detail(Basic):
-    """Basic: This class represents basic information about a villager, such
-    as their name, gender, and species. It inherits from Record and adds
-    several new attributes, including bubble_color, name_color, and link."""
+    """Detail: This class represents more detailed information about
+    a villager, including their birthday, clothing, and personality.
+    It inherits from Basic and adds several new attributes,
+    including birth_day, clothing_id, and personality_id."""
 
     birth_day: int
     birth_month: int

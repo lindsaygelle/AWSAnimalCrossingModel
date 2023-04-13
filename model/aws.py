@@ -1,12 +1,13 @@
-"""aws module that defines a set of TypedDict classes representing
+"""`aws` module that defines a set of `TypedDict` classes representing
 a request and its context in a serverless application."""
 from typing import Any, AnyStr, Dict, Optional, TypedDict
 from uuid import UUID
 
 
+# pylint: disable=R0903
 class ContextIdentity(TypedDict):
-    """ContextIdentity: This class represents the identity of the caller
-    making the request. It is a subclass of TypedDict."""
+    """`ContextIdentity`: This class represents the identity of the caller
+    making the request. It is a subclass of `TypedDict`."""
 
     # accessKey: This attribute is an optional string representing the
     # access key used to make the request.
@@ -44,9 +45,10 @@ class ContextIdentity(TypedDict):
     userArn: Optional[str]
 
 
+# pylint: disable=R0903
 class RequestContext(TypedDict):
-    """RequestContext: This class represents the context of the request.
-    It is a subclass of TypedDict."""
+    """`RequestContext`: This class represents the context of the request.
+    It is a subclass of `TypedDict`."""
 
     # accountId: This attribute is a required string representing the
     # AWS account ID associated with the request.
@@ -86,9 +88,10 @@ class RequestContext(TypedDict):
     stage: str
 
 
+# pylint: disable=R0903
 class Request(TypedDict):
-    """Request: This class represents the request itself.
-    It is a subclass of TypedDict."""
+    """`Request`: This class represents the request itself.
+    It is a subclass of `TypedDict`."""
 
     # body: This attribute is a string or bytes-like object representing
     # the body of the request.
@@ -116,3 +119,21 @@ class Request(TypedDict):
     resource: str
     # stageVariables: This attribute is a dictionary representing the stage.
     stageVariables: Dict[str, Any]
+
+
+# pylint: disable=R0903
+class Response(TypedDict):
+    """`Response`: This class is intended to be used as a type hint for
+    functions that return a JSON response from an AWS Lambda function.
+    The `body` field should contain the JSON payload of the response,
+    while the `headers` field should contain any additional headers that need
+    to be included in the response. The `statusCode` field should be set to the
+    appropriate HTTP status code for the response."""
+
+    # body: A string representing the body of the response.
+    body: AnyStr
+    # headers: A dictionary that maps header names to their values.
+    headers: Dict[str, Any]
+    # statusCode: An HTTP status code, represented as an instance of the
+    # HTTPStatus enumeration.
+    statusCode: int
