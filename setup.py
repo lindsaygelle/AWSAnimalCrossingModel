@@ -1,7 +1,9 @@
-from typing import Any, Dict, List, Optional
+"""setup"""
+from typing import Dict, List, Optional
 
 import setuptools
 
+# pylint: disable=C0103
 author: str = "lindsaygelle"
 author_email: Optional[str] = None
 classifiers: List[str] = [
@@ -15,7 +17,7 @@ description: str = "AWSAnimalCrossing"
 github_author: str = author
 github_repository: str = "AWSAnimalCrossing"
 include_package_data = True
-install_requires: List[str] = []
+install_requires: List[str] = ["StrEnum"]
 keywords: List[str] = [github_repository]
 with open("README.md", encoding="utf-8") as f:
     long_description = f.read()

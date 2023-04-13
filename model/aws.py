@@ -1,10 +1,10 @@
 """`aws` module that defines a set of `TypedDict` classes representing
 a request and its context in a serverless application."""
-from http import HTTPStatus
 from typing import Any, AnyStr, Dict, Optional, TypedDict
 from uuid import UUID
 
 
+# pylint: disable=R0903
 class ContextIdentity(TypedDict):
     """`ContextIdentity`: This class represents the identity of the caller
     making the request. It is a subclass of `TypedDict`."""
@@ -45,6 +45,7 @@ class ContextIdentity(TypedDict):
     userArn: Optional[str]
 
 
+# pylint: disable=R0903
 class RequestContext(TypedDict):
     """`RequestContext`: This class represents the context of the request.
     It is a subclass of `TypedDict`."""
@@ -87,6 +88,7 @@ class RequestContext(TypedDict):
     stage: str
 
 
+# pylint: disable=R0903
 class Request(TypedDict):
     """`Request`: This class represents the request itself.
     It is a subclass of `TypedDict`."""
@@ -119,6 +121,7 @@ class Request(TypedDict):
     stageVariables: Dict[str, Any]
 
 
+# pylint: disable=R0903
 class Response(TypedDict):
     """`Response`: This class is intended to be used as a type hint for
     functions that return a JSON response from an AWS Lambda function.
@@ -131,5 +134,6 @@ class Response(TypedDict):
     body: AnyStr
     # headers: A dictionary that maps header names to their values.
     headers: Dict[str, Any]
-    # statusCode: An HTTP status code, represented as an instance of the HTTPStatus enumeration.
-    statusCode: HTTPStatus
+    # statusCode: An HTTP status code, represented as an instance of the
+    # HTTPStatus enumeration.
+    statusCode: int

@@ -1,11 +1,13 @@
 """`net` module that defines a Link class representing a hyperlink to
 a document with a specified HTTP method. It also defines a `Response`
 that can be used in HTTP response."""
-from http import HTTPMethod
-from typing import Any, AnyStr, Dict, List, TypedDict
+from typing import Any, AnyStr, Dict, List, TypedDict, Union
 from uuid import UUID
 
-Content = Dict[AnyStr, Any] | TypedDict
+from .http.method import Method
+
+Content = Union[Dict[AnyStr, Any], TypedDict]
+Id = Union[str, UUID]
 
 
 class Link(TypedDict):
@@ -20,7 +22,7 @@ class Link(TypedDict):
     href: str
     # method: This attribute is a Method type alias that represents the HTTP
     # method that should be used to access the document.
-    method: HTTPMethod
+    method: Method
 
 
 class Response(TypedDict):
@@ -29,7 +31,7 @@ class Response(TypedDict):
 
     # requestId: This attribute is a required string or UUID object
     # representing the ID of the request.
-    requestId: (str | UUID)
+    requestId: Id
     # requestTime: This attribute is a required string representing the
     # date and time the request was received.
     requestTime: str
@@ -38,7 +40,7 @@ class Response(TypedDict):
     requestTimeEpoch: int
     # responseId: This attribute is a required string or UUID object
     # representing the ID of the response.
-    responseId: (str | UUID)
+    responseId: Id
     # responseTime: This attribute is a required string representing the
     # date and time the response was received.
     responseTime: str
