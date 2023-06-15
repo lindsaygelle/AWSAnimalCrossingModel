@@ -1,59 +1,57 @@
-"""setup"""
+# pylint: disable=C0114
 from typing import Dict, List, Optional
+from setuptools import setup
 
-import setuptools
-
-# pylint: disable=C0103
-author: str = "lindsaygelle"
-author_email: Optional[str] = None
-classifiers: List[str] = [
+AUTHOR: str = "lindsaygelle"
+AUTHOR_EMAIL: Optional[str] = None
+CLASSIFIERS: List[str] = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
 ]
-description: str = "AWSAnimalCrossing"
-github_author: str = author
-github_repository: str = "AWSAnimalCrossing"
-include_package_data = True
-install_requires: List[str] = ["StrEnum"]
-keywords: List[str] = [github_repository]
+DESCRIPTION: str = "AWSAnimalCrossingModel"
+GITHUB_AUTHOR: str = AUTHOR
+GITHUB_REPOSITORY: str = "AWSAnimalCrossingModel"
+INCLUDE_PACKAGE_DATA = True
+INSTALL_REQUIRES: List[str] = []
+KEYWORDS: List[str] = [GITHUB_REPOSITORY]
 with open("README.md", encoding="utf-8") as f:
-    long_description = f.read()
-long_description_content_type = "text/markdown"
-maintainer: str = author
-maintainer_email: Optional[str] = author_email
-name: str = "model"
-package_dir: Dict[str, str] = {name: name}
-packages: List[str] = [name]
-project_urls: Dict[str, str] = {
-    "Bug Reports": f"https://github.com/{github_author}/{github_repository}/issues",
-    "Documentation": f"https://github.com/{github_author}/{github_repository}",
-    "Source Code": f"https://github.com/{github_author}/{github_repository}",
+    LONG_DESCRIPTION = f.read()
+LONG_DESCRIPTION_CONTENT_TYPE = "text/markdown"
+MAINTAINER: str = AUTHOR
+MAINTAINER_EMAIL: Optional[str] = AUTHOR_EMAIL
+NAME: str = "model"
+PACKAGE_DIR: Dict[str, str] = {NAME: NAME}
+PACKAGES: List[str] = [NAME]
+# noqa: E501
+PROJECT_URLS: Dict[str, str] = {
+    "Bug Reports": f"https://github.com/{GITHUB_AUTHOR}/{GITHUB_REPOSITORY}/issues",
+    "Documentation": f"https://github.com/{GITHUB_AUTHOR}/{GITHUB_REPOSITORY}",
+    "Source Code": f"https://github.com/{GITHUB_AUTHOR}/{GITHUB_REPOSITORY}",
 }
-python_requires: str = ">= 3.8"
-url: str = f"https://www.github.com/{author}/{github_repository}"
-with open("VERSION", encoding="utf-8") as f:
-    version: str = f.read()
+PYTHON_REQUIRES: str = ">=3.8"
+URL: str = f"https://www.github.com/{GITHUB_AUTHOR}/{GITHUB_REPOSITORY}"
+VERSION = "1.0.0"
 
-setuptools.setup(
-    author=author,
-    author_email=author_email,
-    classifiers=classifiers,
-    description=description,
-    include_package_data=include_package_data,
-    install_requires=install_requires,
-    keywords=keywords,
-    long_description=long_description,
-    long_description_content_type=long_description_content_type,
-    maintainer=maintainer,
-    maintainer_email=maintainer_email,
-    name=name,
-    package_dir=package_dir,
-    packages=packages,
-    project_urls=project_urls,
-    python_requires=python_requires,
-    url=url,
-    version=version,
+setup(
+    author=AUTHOR,
+    author_email=AUTHOR_EMAIL,
+    classifiers=CLASSIFIERS,
+    description=DESCRIPTION,
+    include_package_data=INCLUDE_PACKAGE_DATA,
+    install_requires=INSTALL_REQUIRES,
+    keywords=KEYWORDS,
+    long_description=LONG_DESCRIPTION,
+    long_description_content_type=LONG_DESCRIPTION_CONTENT_TYPE,
+    maintainer=MAINTAINER,
+    maintainer_email=MAINTAINER_EMAIL,
+    name=NAME,
+    package_dir=PACKAGE_DIR,
+    packages=PACKAGES,
+    project_urls=PROJECT_URLS,
+    python_requires=PYTHON_REQUIRES,
+    url=URL,
+    version=f"{VERSION}",
 )
